@@ -7,9 +7,165 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #242323;
+  padding-top: 100px;
+  box-sizing: border-box;
+  color: #969696;
+  font-weight: 400px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  line-height: 1;
+  font-family: inherit;
+}
+
+.todo-section {
+  margin-top: 60px;
+  width: 800px;
+  padding: 40px;
+  margin: 0 auto;
+  background-color: #2c2c2c;
+}
+
+.main-header {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #00c6b2;
+}
+
+.todo-form {
+  width: 450px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 0 auto 30px;
+}
+
+.todo-input {
+  padding: 10px;
+  outline: none;
+  background-color: inherit;
+  border: 2px solid #525252;
+  color: inherit;
+  font-size: 18px;
+}
+
+.todo-input::placeholder {
+  color: #525252;
+}
+
+.todo-add {
+  outline: none;
+  background-color: inherit;
+  border: 2px solid #525252;
+  border-left: none;
+  cursor: pointer;
+  color: #00c6b2;
+  font-size: 20px;
+}
+
+.todo-text {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #966f03;
+}
+
+.todo-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 66.6% 1fr 1fr;
+  margin: 10px auto;
+  width: 450px;
+  height: 40px;
+  background-color: #525252;
+}
+
+.todo-delete {
+  outline: none;
+  height: 40px;
+  background-color: #2c2c2c;
+  border: 2px solid #525252;
+  border-left: none;
+  cursor: pointer;
+  color: #b34646;
+  font-size: 20px;
+}
+
+.todo-edit {
+  outline: none;
+  height: 40px;
+  background-color: #2c2c2c;
+  border: 2px solid #525252;
+  border-left: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #966f03;
+}
+
+.todo-desc {
+  align-self: center;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.list-item-completed {
+  text-decoration: line-through;
+}
+
+.list-item-completed::after,
+.list-item-uncompleted::after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  width: 5px;
+}
+
+.list-item-completed::after {
+  background-color: #00c6b2;
+}
+
+.list-item-uncompleted::after {
+  background-color: #966f03;
+}
+
+.list-item-completed::after .todo-wrapper::after {
+  background-color: none;
+}
+
+.todo-done {
+  position: absolute;
+  width: 40px;
+  top: 0;
+  left: -14%;
+}
+
+.edit-input {
+  padding: 0 12px;
+  background-color: #3f3c37;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+}
+
+.edit-input:focus {
+  outline: none;
+  border: 1px solid #966f03;
 }
