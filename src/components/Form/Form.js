@@ -7,7 +7,8 @@ export const Form = () => {
   const [todo, setTodo] = useState('');
   const dispatch = useDispatch();
 
-  const onChangeHandler = e => {
+  const onSubmitHandler = e => {
+    e.preventDefault();
     const newTodo = {
       id: nanoid(),
       text: todo,
@@ -19,8 +20,23 @@ export const Form = () => {
     setTodo('');
   };
 
+  //   useEffect(() => {
+  //     const keyDownHandler = event => {
+  //       console.log('User pressed: ', event.key);
+  //       if (event.key === 'Enter') {
+  //         event.preventDefault();
+  //         onSubmitHandler();
+  //       }
+  //     };
+  //     document.addEventListener('keydown', keyDownHandler);
+
+  //     return () => {
+  //       document.removeEventListener('keydown', keyDownHandler);
+  //     };
+  //   }, []);
+
   return (
-    <form onSubmit={e => e.preventDefault()} className="todo-form">
+    <form onSubmit={onSubmitHandler} className="todo-form">
       <input
         className="todo-input"
         value={todo}
@@ -29,13 +45,7 @@ export const Form = () => {
         placeholder="Create a new todo..."
         maxLength="25"
       />
-      <button
-        onClick={() => onChangeHandler()}
-        type="button"
-        className="todo-add"
-      >
-        Add
-      </button>
+      <button className="todo-add">Add</button>
     </form>
   );
 };
