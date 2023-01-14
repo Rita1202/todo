@@ -23,7 +23,7 @@ export const ListItem = ({ todo }) => {
 
   return (
     <div className="todo-wrapper">
-      {todo.completed && <img src={done} className="todo-done" />}
+      {todo.completed && <img src={done} alt="done" className="todo-done" />}
 
       {isEdited ? (
         <input
